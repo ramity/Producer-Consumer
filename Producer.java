@@ -1,3 +1,6 @@
+//Lewis Brown
+//010744629
+
 import java.util.Random;
 
 class Producer extends Thread

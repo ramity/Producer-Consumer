@@ -36,9 +36,12 @@ class Consumer extends Thread
                 e.printStackTrace();
             }
 
-            int result = buffer.remove();
+            if(this.iterations < this.iterationsAllowed)
+            {
+                int result = buffer.remove();
 
-            this.iterations++;
+                this.iterations++;
+            }
         }
 
         System.out.println("Consumer " + this.getId() + " finished @" + this.iterations);

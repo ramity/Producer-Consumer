@@ -36,9 +36,12 @@ class Producer extends Thread
                 e.printStackTrace();
             }
 
-            this.buffer.insert(dice.nextInt(999999));
+            if(this.iterations < this.iterationsAllowed)
+            {
+                this.buffer.insert(dice.nextInt(999999));
 
-            this.iterations++;
+                this.iterations++;
+            }
         }
 
         System.out.println("Producer " + this.getId() + " finished @" + this.iterations);

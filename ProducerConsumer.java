@@ -10,8 +10,8 @@ public class ProducerConsumer extends Thread
         //init int array (serves as our buffer)
         BoundedBuffer buffer = new BoundedBuffer();
 
-        Producer[] producers = new Producer[producerThreads + 1];
-        Consumer[] consumers = new Consumer[consumerThreads + 1];
+        Producer[] producers = new Producer[producerThreads];
+        Consumer[] consumers = new Consumer[consumerThreads];
 
         //create producer threads
         for(int q = 0;q < producerThreads;q++)
@@ -31,6 +31,10 @@ public class ProducerConsumer extends Thread
         try
         {
             Thread.sleep(sleepTime * 1000);
+
+            System.out.println("ProducerConsumer (main) end - killing threads");
+
+            System.exit(0);
         }
         catch(InterruptedException e)
         {
